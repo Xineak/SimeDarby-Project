@@ -171,7 +171,9 @@ The proposed first pilot would be limited to a **controlled gated landed communi
 
 Developed by a three-member university hackathon team.
 
-**[ADD TEAM NAME & MEMBERS / ROLES]**
+KHOO XING EN
+JOYCE LAI MING SAN
+SIEW KAE XIN
 
 ## 📄 Disclosure
 
