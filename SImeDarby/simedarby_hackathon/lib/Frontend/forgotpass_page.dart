@@ -324,7 +324,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         borderRadius: BorderRadius.circular(16),
       ),
       child: DropdownButtonFormField<String>(
+<<<<<<< Updated upstream
         value: value, // ✨ 修复：改成了正确的 value 属性
+=======
+        initialValue: value,
+>>>>>>> Stashed changes
         hint: Text(
           label,
           style: const TextStyle(color: Colors.black54, fontSize: 13),

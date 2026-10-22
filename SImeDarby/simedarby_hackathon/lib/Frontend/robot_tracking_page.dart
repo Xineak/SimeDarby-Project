@@ -106,7 +106,7 @@ class _RobotTrackingPageState extends State<RobotTrackingPage>
       ..scale(safeScale);
   }
 
-  void _fitMap(Size viewport, {bool cover = true}) {
+  void _fitMap(Size viewport) {
     if (viewport.width <= 0 || viewport.height <= 0) return;
     _minScale = math.max(viewport.width / mapW, viewport.height / mapH);
     _maxScale = math.max(3.0, _minScale * 5);

@@ -454,7 +454,11 @@ class _RegisterPageState extends State<RegisterPage> {
         borderRadius: BorderRadius.circular(16),
       ),
       child: DropdownButtonFormField<String>(
+<<<<<<< Updated upstream
         value: value, // 修复初始值属性名为 value
+=======
+        initialValue: value,
+>>>>>>> Stashed changes
         hint: Text(label, style: const TextStyle(color: Colors.black54)),
         dropdownColor: const Color(0xFFE8F0EC),
         icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF2C6B56)),

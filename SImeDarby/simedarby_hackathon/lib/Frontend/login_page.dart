@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+<<<<<<< Updated upstream
 import 'register_page.dart';
 import 'forgotpass_page.dart';
+=======
+import 'register_page.dart'; // 导入注册页面
+import 'forgotpass_page.dart'; // 导入找回密码页面
+import '../pages/convey_home.dart';
+>>>>>>> Stashed changes
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -57,6 +63,7 @@ class _LoginPageState extends State<LoginPage> {
       if (!mounted) return;
 
       if (response.statusCode == 200 && data['success'] == true) {
+<<<<<<< Updated upstream
         // 💡 核心修复：先执行跳转，把首页推入路由栈
         Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
@@ -78,6 +85,17 @@ class _LoginPageState extends State<LoginPage> {
 =======
 >>>>>>> Stashed changes:lib/auth/login_page.dart
       } else {
+=======
+      if (!mounted) return;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const ConveyHome(),
+        ),
+      );
+    } else {
+>>>>>>> Stashed changes
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(data['message'] ?? 'Invalid username or password!'),

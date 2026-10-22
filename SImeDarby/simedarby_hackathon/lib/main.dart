@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'frontend/login_page.dart'; // 引入你刚刚建的 login_page 文件
+import 'Frontend/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Login Demo',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: const LoginPage(), // 直接把首页设为你的 LoginPage
+      title: 'Convey',
+      theme: ThemeData(useMaterial3: true, primarySwatch: Colors.green),
+      home: const LoginPage(),
     );
   }
 }
