@@ -21,6 +21,7 @@ CORS(
     resources={
         r"/api/*": {
             "origins": [
+                "https://convy-demo.web.app",
                 r"http://localhost:\d+",
                 r"http://127\.0\.0\.1:\d+"
             ],
