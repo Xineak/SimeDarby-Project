@@ -42,7 +42,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
     try {
       // 模拟器使用 10.0.2.2，真机/网页使用对应 IP
+<<<<<<< Updated upstream:SImeDarby/simedarby_hackathon/lib/Frontend/resetpass_page.dart
       final url = Uri.parse('http://10.0.2.2:5000/api/reset-password');
+=======
+      final url = Uri.parse('$apiBaseUrl/api/reset-password');
+>>>>>>> Stashed changes:lib/auth/resetpass_page.dart
 
       final response = await http.post(
         url,

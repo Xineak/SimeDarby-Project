@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'login_page.dart'; // 确保引入了登录页以便精准跳转
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -76,8 +77,12 @@ class _RegisterPageState extends State<RegisterPage> {
         base64Image = base64Encode(imageBytes);
       }
 
+<<<<<<< Updated upstream:SImeDarby/simedarby_hackathon/lib/Frontend/register_page.dart
       // 注意：如果是 Android 模拟器，请用 'http://10.0.2.2:5000/api/register'
       final url = Uri.parse('http://10.0.2.2:5000/api/register');
+=======
+      final url = Uri.parse('$apiBaseUrl/api/register');
+>>>>>>> Stashed changes:lib/auth/register_page.dart
 
       final response = await http.post(
         url,
@@ -96,16 +101,28 @@ class _RegisterPageState extends State<RegisterPage> {
         }),
       );
 
-      final responseData = jsonDecode(response.body);
+      Map<String, dynamic> responseData = {};
+      try {
+        responseData = jsonDecode(response.body);
+      } catch (_) {}
 
       if (response.statusCode == 200) {
         if (!mounted) return;
+
+        // 弹出成功提示
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Registration successful! Please login.'),
+            backgroundColor: Color(0xFF2C6B56),
           ),
         );
-        Navigator.pop(context); // 返回上一页（登录页）
+
+        // 成功后使用路由跳转回登录页并清空堆栈
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginPage()),
+          (route) => false,
+        );
       } else {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
@@ -391,7 +408,7 @@ class _RegisterPageState extends State<RegisterPage> {
             : null,
       ),
       child: imageFile == null
-          ? const Icon(Icons.person, size: 50, color: Color(0xFF2C6B56))
+          ? const Icon(Icons.person, size: 50, color: Color(0xFF0F382B))
           : null,
     );
   }
@@ -437,7 +454,7 @@ class _RegisterPageState extends State<RegisterPage> {
         borderRadius: BorderRadius.circular(16),
       ),
       child: DropdownButtonFormField<String>(
-        value: value,
+        value: value, // 修复初始值属性名为 value
         hint: Text(label, style: const TextStyle(color: Colors.black54)),
         dropdownColor: const Color(0xFFE8F0EC),
         icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF2C6B56)),

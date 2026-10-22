@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // This is a basic Flutter widget test.
 //
 // To perform an interaction with a widget in your test, use the WidgetTester
@@ -26,5 +27,16 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+=======
+import 'package:flutter_test/flutter_test.dart';
+import 'package:townshipbot/main.dart';
+
+void main() {
+  testWidgets('CONVY app starts', (WidgetTester tester) async {
+    await tester.pumpWidget(const ConvyApp());
+    await tester.pump();
+
+    expect(find.byType(ConvyApp), findsOneWidget);
+>>>>>>> Stashed changes
   });
 }

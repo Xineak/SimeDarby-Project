@@ -1,9 +1,15 @@
+<<<<<<< Updated upstream:SImeDarby/simedarby_hackathon/lib/Frontend/forgotpass_page.dart
+=======
+import '../api_config.dart';
+
+>>>>>>> Stashed changes:lib/auth/forgotpass_page.dart
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
 import 'dart:convert';
+
 import 'resetpass_page.dart'; // 确保导入了重置密码页面
 
-// 1. 找回密码：第一步（输入Username和2个密保问题）
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
 
@@ -53,8 +59,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     });
 
     try {
+<<<<<<< Updated upstream:SImeDarby/simedarby_hackathon/lib/Frontend/forgotpass_page.dart
       // 模拟器使用 10.0.2.2，真机/网页使用对应 IP
       final url = Uri.parse('http://10.0.2.2:5000/api/verify-security');
+=======
+      final url = Uri.parse('$apiBaseUrl/api/verify-security');
+>>>>>>> Stashed changes:lib/auth/forgotpass_page.dart
 
       final response = await http.post(
         url,
@@ -314,7 +324,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         borderRadius: BorderRadius.circular(16),
       ),
       child: DropdownButtonFormField<String>(
-        value: value,
+        value: value, // ✨ 修复：改成了正确的 value 属性
         hint: Text(
           label,
           style: const TextStyle(color: Colors.black54, fontSize: 13),
