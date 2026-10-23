@@ -15,13 +15,15 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 app = Flask(__name__)
 
-# CORS - Local Flutter Web development
+
+# CORS - Flutter Web frontend
 CORS(
     app,
     resources={
         r"/api/*": {
             "origins": [
                 "https://convy-demo.web.app",
+                "https://mellow-dieffenbachia-806ce4.netlify.app",
                 r"http://localhost:\d+",
                 r"http://127\.0\.0\.1:\d+"
             ],
