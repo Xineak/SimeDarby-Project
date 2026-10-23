@@ -23,6 +23,7 @@ CORS(
         r"/api/*": {
             "origins": [
                 "https://convy-demo.web.app",
+                "https://euphonious-starburst-bfcf35.netlify.app",  # 新增你目前的 Netlify 網址
                 "https://mellow-dieffenbachia-806ce4.netlify.app",
                 r"http://localhost:\d+",
                 r"http://127\.0\.0\.1:\d+"
@@ -440,7 +441,6 @@ def update_user_profile(username):
 
 @app.route("/api/requests", methods=["POST"])
 def create_robot_request():
-    # ✨ 修复：删除了错误的 Thread 变量
     data = request.get_json(silent=True) or {}
 
     username = str(data.get("username") or "").strip()
